@@ -11,18 +11,38 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "User Documentation",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "User Interface",
+            "pages": [
+              "ui/schedule",
+              "ui/time-tracker"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "user/bookings",
+              "user/time-entries",
+              "user/projects",
+              "user/contacts",
+              "user/quotes-invoices",
+              "user/resources",
+              "user/schedules",
+              "user/reports",
+              "user/integrations"
+            ]
+          },
+          {
+            "group": "Mintlify",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -35,6 +55,17 @@
         ]
       },
       {
+        "tab": "Admin Documentation",
+        "groups": [
+          {
+            "group": "Resources",
+            "pages": [
+              "admin/resources"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "openapi": "/api-reference/openapi.yaml"
       }
@@ -42,19 +73,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://www.sonderplan.com",
+          "icon": "earth-oceania"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Get Support",
+          "href": "mailto:support@sonderplan.com",
+          "icon": "question"
         }
       ]
     }
