@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "User Documentation",
+        "tab": "User Guides",
         "groups": [
           {
             "group": "Get Started",
@@ -24,11 +24,12 @@
             "group": "User Interface",
             "pages": [
               "ui/schedule",
-              "ui/time-tracker"
+              "ui/time-tracker",
+              "ui/data-tables"
             ]
           },
           {
-            "group": "Core Features",
+            "group": "Core",
             "pages": [
               "user/bookings",
               "user/time-entries",
@@ -60,7 +61,12 @@
           {
             "group": "Resources",
             "pages": [
-              "admin/resources"
+              "admin/resources",
+              "admin/schedules",
+              "admin/users",
+              "admin/groups",
+              "admin/sessions",
+              "admin/custom-fields"
             ]
           }
         ]
@@ -68,6 +74,14 @@
       {
         "tab": "API Reference",
         "openapi": "/api-reference/openapi.yaml"
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "changelog"
+          }
+        ]
       }
     ],
     "global": {

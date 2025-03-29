@@ -1,5 +1,87 @@
 ---
 title: 'Bookings'
-description: 'Blocks of time that combines one or more resources, project, client, status and custom fields'
+description: 'A booking is a scheduled entry representing a specific block of time allocated for an activity or job.'
 icon: 'calendar-day'
 ---
+
+## Properties
+
+Bookings always include a **name**, a **start date-time** and an **end date-time**. Additionally, bookings may include any of the following properties:
+
+<CardGroup cols={2}>
+    <Card title="Resources & Rates" icon="camera">
+        Supports one or multiple resources. Buy & sell rates can be set for each resource
+    </Card>
+    <Card title="Time Entries" icon="timer">
+        Any time entries that were logged by resources directly to the booking
+    </Card>
+    <Card title="Project" icon="folder-closed">
+        Used for project reporting and sets the client and client contact fields
+    </Card>
+    <Card title="Client & Contact Person" icon="book-user">
+        Pulls through client contact info and used to prefill quotes / invoices
+    </Card>
+    <Card title="Billable Items" icon="utensils">
+        Adhoc items with buy & sell costs that are added to prefilled quotes / invoices
+    </Card>
+    <Card title="Quotes & Invoices" icon="file-invoice">
+        Details about the linked quotes & invoices generated from bookings
+    </Card>
+    <Card title="File Attachments" icon="paperclip">
+        Files that are related to this booking can be uploaded and attached directly
+    </Card>
+    <Card title="Custom Fields" icon="i-cursor">
+        Single, multi line and select menu input fields can be added to bookings
+    </Card>
+</CardGroup>
+
+
+## Access Permissions
+
+The ability to view, create, edit and delete a booking is derived from the combination of group, schedule and individual booking permissions.
+
+```mermaid
+flowchart TD
+%% Nodes
+A("Get user's group access to Schedule Module")
+A2("Does user's group have any access to Admin Module")
+A3("Does user or group have access to resource (via a schedule)")
+B("No access to Schedule & Booking")
+C("Is user linked to a Resource?")
+C2("Evaluate user resource schedule view mode")
+E("Is user resource added to Booking?")
+X("No access to Booking")
+Y("View Only access to Booking")
+Z("Full edit / delete access to Booking")
+
+
+%% Edges
+A -- No Access --> B
+A -- Read Only --> A2 -- Yes --> Y
+A2 -- No --> A3
+A3 -- Yes --> C
+C -- Yes --> C2
+C -- No --> Y
+C2 -- Hide Others --> E
+C2 -- See All --> Y
+E -- No --> X
+E -- Yes --> Y
+A3 -- No --> X
+
+```
+
+To view a booking, a user must have Read access to the Schedule Module and Read access to at least one Schedule.
+
+Depending on the resources allocated to a schedule, the user will be able to view any booking that is associated with those resources.
+
+## Creating a booking
+
+<Check>
+    ### Permissions
+    To create a booking, a user must be in a User Group with Read & Write privileges to the Schedule Module.
+</Check>
+
+
+
+
+
